@@ -1,0 +1,53 @@
+/* Accueil, recommandation : un extrait cité tel quel, avec sa source vérifiable. */
+
+.reco {
+  margin: 0;
+  max-width: 62rem;
+  padding: 36px 40px 30px;
+  background: var(--plate);
+  border: 2px solid var(--ink);
+}
+
+.reco__quote {
+  margin: 0;
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2.1vw, 1.625rem);
+  line-height: 1.32;
+  text-wrap: pretty;
+}
+
+.reco__quote p + p {
+  margin-top: 14px;
+}
+
+/* Attribution et lien vers l’original. */
+.reco__source {
+  display: grid;
+  gap: 10px;
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--ink);
+  color: var(--ink-2);
+}
+
+.reco__source strong {
+  color: var(--ink);
+}
+
+.reco__source a {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .reco {
+    padding: 24px 20px 20px;
+  }
+}
