@@ -279,13 +279,6 @@
   margin-right: 0;
 }
 
-@media (min-width: 1041px) {
-  .post {
-    position: sticky;
-    top: 96px;
-  }
-}
-
 @media (max-width: 1040px) {
   .intro {
     grid-template-columns: minmax(0, 1fr);
