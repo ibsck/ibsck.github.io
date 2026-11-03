@@ -70,13 +70,15 @@ portfolio/
 
 Pour un déploiement dans un sous-dossier (par exemple `exemple.fr/portfolio/`), il faut ajouter `base: '/portfolio/'` dans `vite.config.js` et adapter les liens absolus.
 
-### À faire une fois l'adresse du site connue
+### Adresse et référencement
 
-Aucune URL de production n'est inventée dans le code. Quand le domaine est choisi :
+Le site est publié sur https://ibsck.github.io.
 
-1. Ajouter dans `src/partials/head.html`, ou dans chaque page, la balise `<link rel="canonical" href="https://votre-domaine/…">` et `<meta property="og:url" …>`.
-2. Ajouter `Sitemap: https://votre-domaine/sitemap.xml` dans `public/robots.txt`, et créer `public/sitemap.xml` listant les six pages.
-3. Facultatif : ajouter une image de partage `public/og.png` (1200 × 630) et `<meta property="og:image" …>`, puis passer `twitter:card` à `summary_large_image`.
+- Chaque page déclare son adresse dans `<link rel="canonical">` et `og:url`.
+- `public/sitemap.xml` liste les pages ; `public/robots.txt` y renvoie.
+- L'image de partage `public/og.png` (1200 × 630) est déclarée dans `src/partials/head.html`. Sa source est `src/tools/og-image.html` : pour la régénérer, lancer `npm run dev`, ouvrir `/tools/og-image.html` et capturer la page à 1200 × 630.
+
+En cas de changement d'adresse (nom de domaine personnel, par exemple), remplacer `https://ibsck.github.io` dans ces fichiers.
 
 ## Contenu
 

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face { font-family: 'Barlow'; font-weight: 500; src: url('/fonts/barlow-latin-500-normal.woff2') format('woff2'); }
+      @font-face { font-family: 'Barlow Semi Condensed'; font-weight: 600; src: url('/fonts/barlow-semi-condensed-latin-600-normal.woff2') format('woff2'); }
+      @font-face { font-family: 'Barlow Semi Condensed'; font-weight: 700; src: url('/fonts/barlow-semi-condensed-latin-700-normal.woff2') format('woff2'); }
+      * { box-sizing: border-box; margin: 0; }
+      html, body { width: 1200px; height: 630px; overflow: hidden; }
+      body {
+        background-color: #d4dad0;
+        background-image: linear-gradient(#c8cfc3 1px, transparent 1px), linear-gradient(90deg, #c8cfc3 1px, transparent 1px);
+        background-size: 32px 32px;
+        color: #141b18;
+        font-family: 'Barlow', sans-serif;
+        display: grid;
+        grid-template-columns: 560px 1fr;
+        gap: 48px;
+        padding: 64px;
+      }
+      .plate {
+        background: #141b18;
+        color: #fbfbf8;
+        padding: 44px 44px 40px;
+        align-self: start;
+      }
+      h1 {
+        font-family: 'Barlow Semi Condensed', sans-serif;
+        font-weight: 700;
+        font-size: 84px;
+        line-height: 0.92;
+        letter-spacing: -0.015em;
+      }
+      h1 span { display: block; color: #f2b300; }
+      .role {
+        margin-top: 26px;
+        font-family: 'Barlow Semi Condensed', sans-serif;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 1.2;
+      }
+      .where {
+        margin-top: 28px;
+        font-family: 'Barlow Semi Condensed', sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        color: #39443f;
+      }
+      .tracks { position: relative; padding-top: 8px; }
+      .track { position: relative; height: 92px; }
+      .rail { position: absolute; left: 0; right: 0; top: 18px; height: 3px; background: #141b18; }
+      .rail::after { content: ''; position: absolute; right: 0; top: -12px; width: 5px; height: 27px; background: #141b18; }
+      .lit .rail { height: 9px; top: 15px; background: #141b18; }
+      .lit .rail::before { content: ''; position: absolute; left: 0; right: 0; top: 3px; height: 3px; background: #f2b300; }
+      .lit .rail::after { top: -9px; }
+      .num {
+        position: absolute; left: 32px; top: 6px;
+        background: #fbfbf8; border: 2px solid #141b18;
+        padding: 0 8px; font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-size: 20px; line-height: 24px;
+      }
+      .lit .num { background: #f2b300; }
+      .label {
+        position: absolute; left: 32px; top: 42px;
+        font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-size: 26px; line-height: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="plate">
+      <h1>Ibrahima Sory <span>BALDE</span></h1>
+      <p class="role">Développeur PHP/Symfony et<br />full‑stack React/TypeScript</p>
+    </div>
+    <div>
+      <div class="tracks">
+        <div class="track lit"><div class="rail"></div><span class="num">V1</span><span class="label">Applications web métier</span></div>
+        <div class="track"><div class="rail"></div><span class="num">V2</span><span class="label">Règles de gestion</span></div>
+        <div class="track"><div class="rail"></div><span class="num">V3</span><span class="label">Reprise de code existant</span></div>
+        <div class="track"><div class="rail"></div><span class="num">V4</span><span class="label">Échanges de données</span></div>
+        <div class="track"><div class="rail"></div><span class="num">V5</span><span class="label">Production et maintenance</span></div>
+      </div>
+      <p class="where">Le Havre, mobile en France</p>
+    </div>
+  </body>
+</html>
