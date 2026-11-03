@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!--@include head-->
+    <meta name="robots" content="index, follow" />
+    <title>Le port du Havre en 3D, en temps réel · Étude de cas · Ibrahima Sory BALDE</title>
+    <meta name="description" content="Étude de cas : visualisation 3D temps réel du port du Havre (navires, état de la mer, météo) avec Symfony, Redis, CesiumJS et WebGL/GLSL. Lead développeur du projet." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Le port du Havre en 3D, en temps réel · Étude de cas" />
+    <meta property="og:description" content="Lead développeur du projet : conception, développement et mise en production d’une visualisation 3D temps réel." />
+  </head>
+  <body data-page="v4">
+    <!--@include header-->
+
+    <main id="contenu">
+      <!--@include tracks-strip-->
+
+      <article class="case wrap">
+        <header class="case__head">
+          <div class="case__title">
+            <span class="plate plate--lg" aria-hidden="true">R4</span>
+            <h1>Le port du Havre en 3D, en temps réel</h1>
+          </div>
+          <p class="case__lead">Une application de visualisation 3D du port du Havre qui montre les mouvements des navires, l’état de la mer et les conditions météorologiques. J’étais lead développeur de ce projet.</p>
+          <dl class="facts">
+            <div><dt>Cadre</dt><dd>HAROPA PORT, en tant que salarié</dd></div>
+            <div><dt>Mon rôle</dt><dd>Lead développeur du projet&nbsp;: conception, développement, mise en production</dd></div>
+            <div><dt>Technologies</dt><dd>Symfony, Redis, CesiumJS, WebGL/GLSL</dd></div>
+            <div><dt>Type de travail</dt><dd>Nouveau développement</dd></div>
+          </dl>
+        </header>
+
+        <figure class="schema" aria-labelledby="schema-r4">
+          <div class="schema__panel">
+            <h2 class="schema__heading">Trois sources, une seule vue 3D</h2>
+            <div class="schema__flow">
+              <div class="schema__col">
+                <p class="schema__label">Données</p>
+                <div class="schema__nodes">
+                  <div class="node"><span class="node__title">Mouvements des navires</span></div>
+                  <div class="node"><span class="node__title">État de la mer</span></div>
+                  <div class="node"><span class="node__title">Conditions météorologiques</span></div>
+                </div>
+              </div>
+              <div class="schema__link" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none"></svg></div>
+              <div class="schema__col">
+                <p class="schema__label">Visualisation</p>
+                <div class="schema__nodes">
+                  <div class="node node--lit"><span class="node__title">Vue 3D du port</span> <span class="node__sub">temps réel, CesiumJS, WebGL/GLSL</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="schema__part">
+              <h3 class="schema__heading">Ma part du projet</h3>
+              <ol class="part">
+                <li class="part__step part__step--done"><span class="line line--solid" aria-hidden="true"></span><span class="part__kind">Réalisé</span> Conception</li>
+                <li class="part__step part__step--done"><span class="line line--solid" aria-hidden="true"></span><span class="part__kind">Réalisé</span> Développement</li>
+                <li class="part__step part__step--done"><span class="line line--solid" aria-hidden="true"></span><span class="part__kind">Réalisé</span> Mise en production</li>
+              </ol>
+            </div>
+          </div>
+          <figcaption id="schema-r4"><strong>Schéma illustratif.</strong> Il résume l’idée d’une vue qui réunit plusieurs sources&nbsp;; ce n’est ni une capture ni l’architecture réelle de l’application.</figcaption>
+        </figure>
+
+        <div class="case__grid">
+          <div class="case__text">
+            <section aria-labelledby="c1">
+              <h2 id="c1">Le contexte</h2>
+              <p>Représenter le port en trois dimensions et y faire apparaître, au fil de l’eau, ce qui change en permanence&nbsp;: la position des navires, l’état de la mer, la météo.</p>
+            </section>
+
+            <section aria-labelledby="c2">
+              <h2 id="c2">Le besoin</h2>
+              <p>Réunir dans une même vue 3D, consultable dans le navigateur, plusieurs informations qui évoluent en temps réel.</p>
+            </section>
+
+            <section aria-labelledby="c3">
+              <h2 id="c3">Ce que j’ai fait</h2>
+              <ul class="steps">
+                <li>J’ai été <strong>lead développeur</strong> de ce projet précis&nbsp;: j’en ai porté la <strong>conception</strong>, le <strong>développement</strong> et la <strong>mise en production</strong>.</li>
+                <li>J’ai travaillé avec CesiumJS, WebGL et GLSL, des technologies de rendu 3D qui sortent de mon cœur de métier, aux côtés de Symfony et Redis.</li>
+              </ul>
+            </section>
+
+            <section aria-labelledby="c5">
+              <h2 id="c5">Ce que ce projet montre</h2>
+              <p>Porter un projet de bout en bout&nbsp;: en concevoir la solution, la développer et la mettre en production.</p>
+            </section>
+          </div>
+
+          <aside class="case__side" aria-label="Lexique">
+
+            <section class="lexicon" aria-labelledby="lex">
+              <h2 id="lex">Termes utiles</h2>
+              <dl>
+                <dt>CesiumJS</dt><dd>Bibliothèque JavaScript d’affichage de globes et de cartes en 3D dans le navigateur.</dd>
+                <dt>WebGL</dt><dd>Interface du navigateur qui permet de dessiner en 3D avec la carte graphique.</dd>
+                <dt>GLSL</dt><dd>Langage des shaders, de petits programmes exécutés par la carte graphique pour calculer l’affichage.</dd>
+                <dt>Redis</dt><dd>Base de données en mémoire, très rapide, adaptée aux données qui changent souvent.</dd>
+                <dt>Lead développeur</dt><dd>Responsable technique d’un projet&nbsp;: ici, la conception, le développement et la mise en production.</dd>
+              </dl>
+            </section>
+          </aside>
+        </div>
+
+        <nav class="case__nav" aria-label="Études de cas voisines">
+          <a class="case__prev" href="/realisations/suivi-dragage.html" rel="prev"><span class="plate">R3</span> <span class="link-label">Suivi des chantiers de dragage</span></a>
+          <a class="case__next" href="#contact"><span class="link-label">Votre projet&nbsp;: me contacter</span></a>
+        </nav>
+      </article>
+
+      <!--@include contact-->
+    </main>
+
+    <!--@include footer-->
+  </body>
+</html>

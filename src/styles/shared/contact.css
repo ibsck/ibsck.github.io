@@ -1,0 +1,111 @@
+/* Bloc contact (signal de sortie), présent sur toutes les pages. */
+
+.exit {
+  background: var(--ink);
+  color: var(--plate);
+  padding-block: 88px;
+}
+
+.exit__inner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 40px;
+}
+
+.exit__signal {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 120px;
+  border: 3px solid var(--plate);
+}
+
+.lamp {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--lamp);
+}
+
+.exit h2 {
+  font-size: clamp(2rem, 3.6vw, 2.875rem);
+}
+
+.exit__body > p:first-of-type {
+  margin-top: 12px;
+  max-width: 56ch;
+  color: var(--on-ink-2);
+}
+
+.exit__mail {
+  margin: 28px 0;
+  font-family: var(--head);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4.2vw, 3rem);
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.exit__mail a {
+  text-decoration-color: var(--lamp);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 0.16em;
+}
+
+.exit__mail a:hover {
+  color: var(--lamp);
+}
+
+.exit .btn:not(.btn--lamp) {
+  background: transparent;
+  color: var(--plate);
+  border-color: var(--plate);
+}
+
+.exit .btn:not(.btn--lamp):hover {
+  background: var(--plate);
+  color: var(--ink);
+}
+
+.exit .btn--lamp {
+  border-color: var(--lamp);
+}
+
+.exit .btn--lamp:hover {
+  background: var(--plate);
+  color: var(--ink);
+  border-color: var(--plate);
+}
+
+.exit .btn.is-done {
+  border-color: var(--lamp);
+  color: var(--lamp);
+}
+
+.exit :focus-visible {
+  outline-color: var(--lamp);
+}
+
+.copy-status {
+  min-height: 1.6em;
+  margin-top: 14px;
+  color: var(--lamp);
+  font-family: var(--head);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .exit {
+    padding-block: 64px;
+  }
+
+  .exit__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .exit__signal {
+    width: 120px;
+    height: 56px;
+  }
+}

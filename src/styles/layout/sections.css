@@ -1,0 +1,27 @@
+/* Bandes de section de l’accueil. */
+
+.band {
+  padding-block: 72px 80px;
+  border-top: 2px solid var(--ink);
+}
+
+.band__head {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.band__head h2 {
+  font-size: clamp(2rem, 3.6vw, 2.875rem);
+}
+
+.band__head p {
+  color: var(--ink-2);
+  max-width: 60ch;
+}
+
+@media (max-width: 640px) {
+  .band {
+    padding-block: 64px;
+  }
+}

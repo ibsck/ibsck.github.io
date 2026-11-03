@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!--@include head-->
+    <meta name="robots" content="index, follow" />
+    <title>Plateforme de documentation utilisateur · Étude de cas · Ibrahima Sory BALDE</title>
+    <meta name="description" content="Étude de cas : plateforme Symfony de gestion et de diffusion de la documentation utilisateur chez HAROPA PORT, conçue, développée, déployée et maintenue par Ibrahima Sory BALDE." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Plateforme de documentation utilisateur · Étude de cas" />
+    <meta property="og:description" content="Un outil pris en charge de la conception à l’exploitation : Symfony, PostgreSQL, Webpack, Quill.js." />
+  </head>
+  <body data-page="v2">
+    <!--@include header-->
+
+    <main id="contenu">
+      <!--@include tracks-strip-->
+
+      <article class="case wrap">
+        <header class="case__head">
+          <div class="case__title">
+            <span class="plate plate--lg" aria-hidden="true">R2</span>
+            <h1>Plateforme de documentation utilisateur</h1>
+          </div>
+          <p class="case__lead">Une application pour gérer et diffuser la documentation des applications du service, auprès de leurs utilisateurs internes et externes. Je l’ai prise en charge de sa conception jusqu’à son exploitation.</p>
+          <dl class="facts">
+            <div><dt>Cadre</dt><dd>HAROPA PORT, en tant que salarié</dd></div>
+            <div><dt>Mon rôle</dt><dd>Conception, développement, déploiement, maintenance</dd></div>
+            <div><dt>Technologies</dt><dd>Symfony, PostgreSQL, Webpack, Quill.js</dd></div>
+            <div><dt>Publics</dt><dd>Utilisateurs internes et externes des applications du service</dd></div>
+          </dl>
+        </header>
+
+        <figure class="schema" aria-labelledby="schema-r2">
+          <div class="schema__panel">
+            <h2 class="schema__heading">De la rédaction à la diffusion</h2>
+            <div class="schema__flow">
+              <div class="schema__col">
+                <p class="schema__label">Rédiger</p>
+                <div class="schema__nodes">
+                  <div class="node"><span class="node__title">Éditeur de texte enrichi</span> <span class="node__sub">Quill.js</span></div>
+                </div>
+              </div>
+              <div class="schema__link" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none"></svg></div>
+              <div class="schema__col">
+                <p class="schema__label">Gérer</p>
+                <div class="schema__nodes">
+                  <div class="node node--lit"><span class="node__title">Plateforme de documentation</span> <span class="node__sub">Symfony, PostgreSQL</span></div>
+                </div>
+              </div>
+              <div class="schema__link" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none"></svg></div>
+              <div class="schema__col">
+                <p class="schema__label">Diffuser</p>
+                <div class="schema__nodes">
+                  <div class="node"><span class="node__title">Utilisateurs internes</span></div>
+                  <div class="node"><span class="node__title">Utilisateurs externes</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="schema__part">
+              <h3 class="schema__heading">Ma part du projet</h3>
+              <ol class="part">
+                <li class="part__step part__step--done"><span class="line line--solid" aria-hidden="true"></span><span class="part__kind">Réalisé</span> Conception</li>
+                <li class="part__step part__step--done"><span class="line line--solid" aria-hidden="true"></span><span class="part__kind">Réalisé</span> Développement</li>
+                <li class="part__step part__step--done"><span class="line line--solid" aria-hidden="true"></span><span class="part__kind">Réalisé</span> Déploiement</li>
+                <li class="part__step part__step--done"><span class="line line--solid" aria-hidden="true"></span><span class="part__kind">Réalisé</span> Maintenance corrective et évolutive</li>
+              </ol>
+            </div>
+          </div>
+          <figcaption id="schema-r2"><strong>Schéma illustratif.</strong> Il résume le parcours d’un document&nbsp;; ce n’est pas une capture de l’application.</figcaption>
+        </figure>
+
+        <div class="case__grid">
+          <div class="case__text">
+            <section aria-labelledby="c1">
+              <h2 id="c1">Le contexte</h2>
+              <p>Le service gère plusieurs applications, utilisées à l’intérieur comme à l’extérieur de HAROPA PORT. Leurs utilisateurs ont besoin d’une documentation à jour et facile à trouver.</p>
+            </section>
+
+            <section aria-labelledby="c2">
+              <h2 id="c2">Le besoin</h2>
+              <p>Réunir dans un même outil la gestion de cette documentation et sa diffusion, pour des publics internes et externes.</p>
+            </section>
+
+            <section aria-labelledby="c3">
+              <h2 id="c3">Ce que j’ai fait</h2>
+              <ul class="steps">
+                <li>J’ai <strong>conçu l’application</strong>&nbsp;: ce qu’elle devait faire et comment l’organiser.</li>
+                <li>Je l’ai <strong>développée</strong> avec Symfony et PostgreSQL, avec l’éditeur de texte Quill.js pour la rédaction et Webpack pour assembler le code côté navigateur.</li>
+                <li>Je l’ai <strong>déployée</strong>, c’est-à-dire mise en service pour ses utilisateurs.</li>
+                <li>J’en ai assuré la <strong>maintenance corrective et évolutive</strong>.</li>
+              </ul>
+            </section>
+
+            <section aria-labelledby="c5">
+              <h2 id="c5">Ce que ce projet montre</h2>
+              <p>Prendre en charge un outil entier&nbsp;: définir ce qu’il doit faire, le construire, le mettre en service, puis le faire vivre.</p>
+            </section>
+          </div>
+
+          <aside class="case__side" aria-label="Lexique">
+
+            <section class="lexicon" aria-labelledby="lex">
+              <h2 id="lex">Termes utiles</h2>
+              <dl>
+                <dt>Symfony</dt><dd>Framework PHP pour construire des applications web côté serveur.</dd>
+                <dt>PostgreSQL</dt><dd>Base de données relationnelle.</dd>
+                <dt>Quill.js</dt><dd>Éditeur de texte enrichi qui fonctionne dans le navigateur.</dd>
+                <dt>Webpack</dt><dd>Outil qui assemble et optimise les fichiers JavaScript et CSS envoyés au navigateur.</dd>
+                <dt>Déploiement</dt><dd>Mise en service d’une application sur les serveurs où ses utilisateurs y accèdent.</dd>
+              </dl>
+            </section>
+          </aside>
+        </div>
+
+        <nav class="case__nav" aria-label="Études de cas voisines">
+          <a class="case__prev" href="/realisations/marchandises-dangereuses.html" rel="prev"><span class="plate">R1</span> <span class="link-label">Marchandises dangereuses</span></a>
+          <a class="case__next" href="/realisations/suivi-dragage.html" rel="next"><span class="plate">R3</span> <span class="link-label">Réalisation suivante&nbsp;: suivi des chantiers de dragage</span></a>
+        </nav>
+      </article>
+
+      <!--@include contact-->
+    </main>
+
+    <!--@include footer-->
+  </body>
+</html>

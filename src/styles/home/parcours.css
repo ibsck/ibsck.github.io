@@ -1,0 +1,88 @@
+/* Accueil, parcours : une ligne et ses gares. */
+
+.line-map {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stop {
+  position: relative;
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  gap: 24px;
+  padding: 0 0 36px 44px;
+}
+
+.stop::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 8px;
+  bottom: -8px;
+  width: 4px;
+  background: var(--ink);
+}
+
+.stop:last-child::before {
+  display: none;
+}
+
+.stop::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 22px;
+  height: 22px;
+  background: var(--plate);
+  border: 3px solid var(--ink);
+}
+
+.stop--major::after {
+  background: var(--lamp);
+}
+
+.stop__when {
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.stop__body h3 {
+  font-size: 1.375rem;
+}
+
+.stop__body p {
+  margin-top: 6px;
+  color: var(--ink-2);
+  max-width: 64ch;
+}
+
+.stop--major .stop__body h3 {
+  font-size: 1.625rem;
+}
+
+.degrees {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--ink-2);
+}
+
+.degrees li {
+  display: grid;
+}
+
+.degrees strong {
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .stop {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+}

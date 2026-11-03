@@ -1,0 +1,310 @@
+/* Études de cas : schéma illustratif, un pupitre noir où l’itinéraire s’allume. */
+
+.schema {
+  margin: 0;
+  padding-bottom: 48px;
+}
+
+.schema__panel {
+  --rail-off: #6b7670;
+  --rail-on: #b9c2bc;
+  padding: 32px 32px 28px;
+  background: var(--ink);
+  color: var(--plate);
+}
+
+.schema__heading {
+  font-size: 1.375rem;
+  margin-bottom: 24px;
+}
+
+.schema__flow {
+  display: flex;
+  align-items: stretch;
+}
+
+.schema__col {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.schema__label {
+  margin-bottom: 12px;
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--on-ink-2);
+}
+
+.schema__nodes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.node {
+  display: grid;
+  gap: 2px;
+  padding: 12px 14px;
+  background: var(--plate);
+  color: var(--ink);
+}
+
+/* L'étape clé, en jaune. */
+.node--lit {
+  background: var(--lamp);
+}
+
+.node__title {
+  font-family: var(--head);
+  font-weight: 700;
+  font-size: 1.1875rem;
+  line-height: 1.15;
+}
+
+.node__sub {
+  font-size: 0.9375rem;
+  line-height: 1.35;
+  color: var(--ink-2);
+}
+
+.schema__link {
+  position: relative;
+  flex: 0 0 80px;
+}
+
+.schema__link svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.schema__link path {
+  fill: none;
+  stroke-linejoin: miter;
+}
+
+.schema__case {
+  stroke: var(--rail-on);
+  stroke-width: 7;
+  /* La gaine s'épaissit au moment où le cœur commence à s'allumer. */
+  transition:
+    stroke 160ms var(--out) var(--delay, 0ms),
+    stroke-width 160ms var(--out) var(--delay, 0ms);
+}
+
+.schema__core {
+  stroke: var(--lamp);
+  stroke-width: 3;
+  stroke-dasharray: var(--len) var(--len);
+  stroke-dashoffset: 0;
+}
+
+/* Avec JavaScript (classe .js posée dans le <head>) : le schéma part éteint et s'allume à l'entrée
+   dans l'écran, cran par cran, à cadence constante. Délais, durées et nombres de crans sont calculés
+   dans scripts/schemas.js. */
+.js .schema .schema__core {
+  stroke-dashoffset: var(--len);
+}
+
+.js .schema.is-lit .schema__core {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset var(--dur, 480ms) steps(var(--steps, 6), end) var(--delay, 0ms);
+}
+
+.js .schema:not(.is-lit) .schema__case {
+  stroke: var(--rail-off);
+  stroke-width: 3;
+}
+
+.schema__part {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rail-off);
+}
+
+.schema__part .schema__heading {
+  font-size: 1.125rem;
+  margin-bottom: 16px;
+}
+
+.part {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 20px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.part__step {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.part__kind {
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--on-ink-2);
+}
+
+.schema .line--solid {
+  background: var(--rail-on);
+}
+
+.part .line--dashed {
+  margin-block: 2.5px;
+}
+
+.schema .line--dashed {
+  background: repeating-linear-gradient(90deg, var(--rail-on) 0 8px, transparent 8px 13px);
+}
+
+.schema > figcaption {
+  margin-top: 12px;
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+}
+
+.schema figcaption strong {
+  color: var(--ink);
+}
+
+@media (max-width: 720px) {
+  .schema__panel {
+    padding: 24px 18px 22px;
+  }
+
+  .schema__heading {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+
+  .schema__flow {
+    position: relative;
+    flex-direction: column;
+    gap: 26px;
+    padding-left: 40px;
+  }
+
+  /* La voie : gaine claire, cœur jaune qui descend jusqu'à la dernière gare. */
+  .schema__flow::before,
+  .schema__flow::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    bottom: 14px;
+  }
+
+  .schema__flow::before {
+    left: 9px;
+    width: 9px;
+    background: var(--rail-on);
+  }
+
+  .schema__flow::after {
+    left: 12px;
+    width: 3px;
+    background: var(--lamp);
+    transform-origin: center top;
+  }
+
+  .js .schema .schema__flow::after {
+    transform: scaleY(0);
+  }
+
+  .js .schema.is-lit .schema__flow::after {
+    transform: scaleY(1);
+    transition: transform var(--rail-dur, 900ms) steps(var(--rail-steps, 12), end);
+  }
+
+  .js .schema:not(.is-lit) .schema__flow::before {
+    background: var(--rail-off);
+  }
+
+  .schema__link {
+    display: none;
+  }
+
+  /* Une gare au départ de chaque étape. */
+  .schema__label {
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+
+  .schema__label::before {
+    content: '';
+    position: absolute;
+    left: -38px;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    background: var(--plate);
+    border: 3px solid var(--ink);
+    box-sizing: border-box;
+    outline: 2px solid var(--rail-on);
+  }
+
+  .schema__col:has(.node--lit) .schema__label::before {
+    background: var(--lamp);
+  }
+
+
+  .schema__nodes {
+    gap: 10px;
+  }
+
+  .node {
+    padding: 12px 14px 13px;
+  }
+
+  .node__title {
+    font-size: 1.125rem;
+  }
+
+  .node__sub {
+    font-size: 1rem;
+  }
+
+  .part {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .part__step {
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 14px;
+    row-gap: 2px;
+    align-items: center;
+  }
+
+  .part__step .line {
+    grid-row: span 2;
+  }
+
+  .part__kind {
+    grid-column: 2;
+  }
+}
+
+/* Schéma sans script : une ligne droite tient lieu d'aiguillage. */
+.schema__link:not(.is-drawn)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 5px;
+  background: var(--rail-on);
+}

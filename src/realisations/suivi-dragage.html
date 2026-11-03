@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!--@include head-->
+    <meta name="robots" content="index, follow" />
+    <title>Suivi des chantiers de dragage · Étude de cas · Ibrahima Sory BALDE</title>
+    <meta name="description" content="Étude de cas : application Symfony de suivi des rapports d’activité des engins de dragage chez HAROPA PORT. Participation à la migration Symfony 2 vers 5, import automatique des rapports CSV." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Suivi des chantiers de dragage · Étude de cas" />
+    <meta property="og:description" content="Participation à une migration Symfony 2 vers 5 et développement d’un import automatique de rapports CSV." />
+  </head>
+  <body data-page="v3">
+    <!--@include header-->
+
+    <main id="contenu">
+      <!--@include tracks-strip-->
+
+      <article class="case wrap">
+        <header class="case__head">
+          <div class="case__title">
+            <span class="plate plate--lg" aria-hidden="true">R3</span>
+            <h1>Suivi des chantiers de dragage</h1>
+          </div>
+          <p class="case__lead">Une application qui suit les rapports d’activité des engins de dragage, notamment les temps d’intervention et les quantités draguées. J’ai participé à sa migration de Symfony&nbsp;2 vers Symfony&nbsp;5 et développé l’import automatique des rapports.</p>
+          <dl class="facts">
+            <div><dt>Cadre</dt><dd>HAROPA PORT, en tant que salarié</dd></div>
+            <div><dt>Mon rôle</dt><dd>Participation à la migration&nbsp;; développement de l’import CSV&nbsp;; maintenance</dd></div>
+            <div><dt>Technologies</dt><dd>PHP, Symfony</dd></div>
+            <div><dt>Type de travail</dt><dd>Application existante</dd></div>
+          </dl>
+        </header>
+
+        <figure class="schema" aria-labelledby="schema-r3">
+          <div class="schema__panel">
+            <h2 class="schema__heading">Du fichier de rapport au suivi</h2>
+            <div class="schema__flow">
+              <div class="schema__col">
+                <p class="schema__label">Source</p>
+                <div class="schema__nodes">
+                  <div class="node"><span class="node__title">Fichier CSV</span> <span class="node__sub">rapport d’activité d’un engin</span></div>
+                </div>
+              </div>
+              <div class="schema__link" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none"></svg></div>
+              <div class="schema__col">
+                <p class="schema__label">Import</p>
+                <div class="schema__nodes">
+                  <div class="node node--lit"><span class="node__title">Import automatique</span> <span class="node__sub">sans ressaisie</span></div>
+                </div>
+              </div>
+              <div class="schema__link" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none"></svg></div>
+              <div class="schema__col">
+                <p class="schema__label">Suivi</p>
+                <div class="schema__nodes">
+                  <div class="node"><span class="node__title">Temps d’intervention</span></div>
+                  <div class="node"><span class="node__title">Quantités draguées</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="schema__part">
+              <h3 class="schema__heading">Ma part du projet</h3>
+              <ol class="part">
+                <li class="part__step part__step--contrib"><span class="line line--dashed" aria-hidden="true"></span><span class="part__kind">Contribution</span> Migration de Symfony 2 vers Symfony 5</li>
+                <li class="part__step part__step--done"><span class="line line--solid" aria-hidden="true"></span><span class="part__kind">Réalisé</span> Import automatique des rapports CSV</li>
+                <li class="part__step part__step--done"><span class="line line--solid" aria-hidden="true"></span><span class="part__kind">Réalisé</span> Maintenance corrective et évolutive</li>
+              </ol>
+            </div>
+          </div>
+          <figcaption id="schema-r3"><strong>Schéma illustratif.</strong> Il résume le principe de l’import&nbsp;; ce n’est pas une capture de l’application.</figcaption>
+        </figure>
+
+        <div class="case__grid">
+          <div class="case__text">
+            <section aria-labelledby="c1">
+              <h2 id="c1">Le contexte</h2>
+              <p>Le dragage consiste à retirer les sédiments qui se déposent au fond des chenaux et des bassins, pour garder la profondeur dont les navires ont besoin. Les engins de dragage produisent des rapports d’activité&nbsp;; l’application en assure le suivi.</p>
+            </section>
+
+            <section aria-labelledby="c2">
+              <h2 id="c2">Le besoin</h2>
+              <p>Deux chantiers distincts. D’abord, l’application reposait sur Symfony&nbsp;2, une version du framework qui n’est plus maintenue&nbsp;: elle devait passer à Symfony&nbsp;5. Ensuite, les rapports d’activité devaient être intégrés automatiquement à partir de fichiers CSV.</p>
+            </section>
+
+            <section aria-labelledby="c3">
+              <h2 id="c3">Ce que j’ai fait</h2>
+              <div class="split">
+                <div class="split__col">
+                  <h3><span class="line line--dashed" aria-hidden="true"></span>J’y ai participé</h3>
+                  <p>La <strong>migration de Symfony&nbsp;2 vers Symfony&nbsp;5</strong>. J’ai contribué à ce chantier mené à plusieurs&nbsp;; je n’en revendique pas l’ensemble.</p>
+                </div>
+                <div class="split__col">
+                  <h3><span class="line line--solid" aria-hidden="true"></span>Je l’ai développé</h3>
+                  <p>L’<strong>import automatique des rapports à partir de fichiers CSV</strong>&nbsp;: l’application lit les fichiers et enregistre les rapports qu’ils contiennent.</p>
+                </div>
+              </div>
+              <ul class="steps">
+                <li>J’ai aussi assuré la maintenance corrective et évolutive de l’application.</li>
+              </ul>
+            </section>
+
+            <section aria-labelledby="c5">
+              <h2 id="c5">Ce que ce projet montre</h2>
+              <p>Reprendre du code existant, prendre part à une montée de version majeure d’un framework, et automatiser une entrée de données pour que l’information arrive dans l’application sans ressaisie.</p>
+            </section>
+          </div>
+
+          <aside class="case__side" aria-label="Lexique">
+
+            <section class="lexicon" aria-labelledby="lex">
+              <h2 id="lex">Termes utiles</h2>
+              <dl>
+                <dt>Dragage</dt><dd>Extraction des sédiments au fond de l’eau pour maintenir la profondeur des chenaux et des bassins.</dd>
+                <dt>Migration Symfony&nbsp;2 vers 5</dt><dd>Passage à une version récente du framework, qui oblige à adapter le code existant à ses nouvelles règles.</dd>
+                <dt>CSV</dt><dd>Format de fichier texte en tableau, où les valeurs sont séparées par un caractère, souvent un point-virgule.</dd>
+                <dt>Import automatique</dt><dd>Lecture d’un fichier par l’application, sans ressaisie manuelle des données.</dd>
+              </dl>
+            </section>
+          </aside>
+        </div>
+
+        <nav class="case__nav" aria-label="Études de cas voisines">
+          <a class="case__prev" href="/realisations/documentation-utilisateur.html" rel="prev"><span class="plate">R2</span> <span class="link-label">Documentation utilisateur</span></a>
+          <a class="case__next" href="/realisations/port-du-havre-3d.html" rel="next"><span class="plate">R4</span> <span class="link-label">Réalisation suivante&nbsp;: le port du Havre en 3D</span></a>
+        </nav>
+      </article>
+
+      <!--@include contact-->
+    </main>
+
+    <!--@include footer-->
+  </body>
+</html>

@@ -1,0 +1,24 @@
+/*
+ * Point d'entrée des styles. Univers « tableau de contrôle optique » :
+ * mosaïque émaillée, traits de voie, voyants d'itinéraire (voir DESIGN.md).
+ * L'ordre des imports compte : base, composants, mise en page, puis sections et pages.
+ */
+
+@import './base/fonts.css';
+@import './base/tokens.css';
+@import './base/base.css';
+@import './components/plates.css';
+@import './components/buttons.css';
+@import './layout/header.css';
+@import './layout/sections.css';
+@import './layout/footer.css';
+@import './home/intro.css';
+@import './home/projects.css';
+@import './home/method.css';
+@import './home/skills.css';
+@import './home/parcours.css';
+@import './shared/contact.css';
+@import './case/strip.css';
+@import './case/case.css';
+@import './case/schema.css';
+@import './pages/not-found.css';

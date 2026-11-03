@@ -1,0 +1,105 @@
+/* Plaques émaillées, puces de preuve et traits de légende (plein, pointillé, fin). */
+
+.plate {
+  display: inline-block;
+  padding: 1px 8px;
+  background: var(--plate);
+  border: 2px solid var(--ink);
+  font-family: var(--head);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.3;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.plate--lg {
+  padding: 4px 12px;
+  font-size: 1.5rem;
+}
+
+.plate--open {
+  border-style: dashed;
+}
+
+.plate--stop {
+  background: var(--stop);
+  color: var(--plate);
+  border-color: var(--stop);
+}
+
+/* Liens « plaque + texte » : seul le texte est souligné. */
+.chip,
+.case__prev,
+.case__next {
+  text-decoration: none;
+}
+
+.link-label {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover > .link-label {
+  text-decoration-color: var(--lamp-deep);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.chip .plate {
+  transition: background-color 160ms var(--out);
+}
+
+.chip:hover .plate {
+  background: var(--lamp);
+}
+
+.band--plate .band__head {
+  padding: 28px 28px 24px;
+  background: var(--ink);
+  color: var(--plate);
+}
+
+.band--plate .band__head p {
+  color: var(--on-ink-2);
+}
+
+/* Forme du trait : plein allumé = au cœur, pointillé = ponctuel, fin = notion */
+.line {
+  flex: none;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 9px;
+}
+
+.line--solid {
+  background: var(--ink);
+}
+
+.line--solid::after {
+  content: '';
+  position: absolute;
+  inset: 3px 0;
+  background: var(--lamp);
+}
+
+.line--dashed {
+  height: 4px;
+  background: repeating-linear-gradient(90deg, var(--ink) 0 8px, transparent 8px 13px);
+}
+
+.line--thin {
+  height: 2px;
+  background: var(--ink);
+}

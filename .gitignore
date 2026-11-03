@@ -1,0 +1,12 @@
+node_modules/
+dist/
+
+# Documents et outils de conception : gardés en local, hors du dépôt public
+DESIGN.md
+PRODUCT.md
+.impeccable/
+.claude/
+
+# Éditeurs
+.idea/
+.vscode/

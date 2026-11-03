@@ -1,0 +1,219 @@
+/* Études de cas : en-tête, faits, texte, lexique et navigation. */
+
+.case__head {
+  display: grid;
+  gap: 24px;
+  padding-block: 48px 40px;
+}
+
+.case__title {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.case__title .plate--lg {
+  flex: none;
+  margin-top: 0.15em;
+  background: var(--lamp);
+}
+
+.case__title h1 {
+  font-size: clamp(2.125rem, 4.6vw, 3.75rem);
+  line-height: 1.02;
+  max-width: 26ch;
+}
+
+.case__lead {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  max-width: 62ch;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 8px 0 0;
+}
+
+.facts > div {
+  padding-top: 10px;
+  border-top: 3px solid var(--ink);
+}
+
+.facts dt {
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+}
+
+.facts dd {
+  margin: 4px 0 0;
+  font-weight: 500;
+}
+
+.case__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 64px;
+  padding-bottom: 56px;
+  border-top: 2px solid var(--ink);
+}
+
+.case__text section {
+  padding-top: 40px;
+}
+
+.case__text h2 {
+  font-size: 1.75rem;
+  margin-bottom: 12px;
+}
+
+.case__text p + p {
+  margin-top: 12px;
+}
+
+.case__text p {
+  max-width: 66ch;
+}
+
+.steps {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 66ch;
+}
+
+.steps li {
+  position: relative;
+  padding-left: 28px;
+}
+
+.steps li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.6em;
+  width: 10px;
+  height: 10px;
+  background: var(--ink);
+}
+
+
+.steps + .muted {
+  margin-top: 14px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.split__col {
+  padding-top: 14px;
+  border-top: 1px solid var(--ink);
+}
+
+.split__col h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.case__side {
+  display: grid;
+  align-content: start;
+  gap: 40px;
+  padding-top: 40px;
+}
+
+@media (min-width: 1041px) {
+  .case__side {
+    position: sticky;
+    top: 88px;
+    align-self: start;
+  }
+}
+
+.lexicon h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.lexicon dl {
+  margin: 0;
+}
+
+.lexicon dt {
+  padding-top: 12px;
+  border-top: 1px solid var(--ink);
+  font-family: var(--head);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.lexicon dd {
+  margin: 2px 0 14px;
+  color: var(--ink-2);
+}
+
+.case__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 28px 64px;
+  border-top: 2px solid var(--ink);
+}
+
+.case__nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.case__nav a:hover .plate {
+  background: var(--lamp);
+}
+
+.case__next {
+  margin-left: auto;
+}
+
+@media (max-width: 1040px) {
+  .case__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .facts {
+    gap: 16px;
+  }
+
+  .case__title {
+    flex-direction: column;
+    gap: 14px;
+  }
+}

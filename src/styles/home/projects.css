@@ -1,0 +1,73 @@
+/* Accueil, réalisations : une plaque, un problème, un rôle. */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 56px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 20px;
+  padding: 24px 0 28px;
+  border-top: 1px solid var(--ink);
+}
+
+.project .plate--lg {
+  align-self: start;
+  transition: background-color 160ms var(--out);
+}
+
+.project:hover .plate--lg,
+.project:focus-within .plate--lg {
+  background: var(--lamp);
+}
+
+.project h3 {
+  font-size: 1.4375rem;
+}
+
+.project h3 a {
+  text-decoration: none;
+}
+
+.project h3 a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.project:hover h3 a {
+  text-decoration: underline 3px var(--ink);
+  text-underline-offset: 0.18em;
+}
+
+.project__problem {
+  margin-top: 8px;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.project__role {
+  margin-top: 10px;
+  color: var(--ink-2);
+}
+
+.project__tech {
+  margin-top: 8px;
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+}
+
+@media (max-width: 1040px) {
+  .projects {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

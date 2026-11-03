@@ -1,0 +1,152 @@
+/* Base : réinitialisation, typographie, liens, focus, utilitaires, transitions de page. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+  scrollbar-color: var(--ink-2) var(--panel-solid);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--panel);
+  background-image:
+    linear-gradient(var(--joint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--joint) 1px, transparent 1px);
+  background-size: var(--tile) var(--tile);
+  caret-color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: var(--lamp);
+  color: var(--ink);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--head);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-color: var(--lamp-deep);
+}
+
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wrap {
+  width: min(100% - 32px, 1200px);
+  margin-inline: auto;
+}
+
+.muted {
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+/* Passage d'une page à l'autre en fondu, sans écran intermédiaire (navigateurs qui le gèrent). */
+@view-transition {
+  navigation: auto;
+}
+
+/* L'en-tête est commun à toutes les pages : il ne clignote pas pendant le changement. */
+.topbar {
+  view-transition-name: topbar;
+}
+
+::view-transition-old(root) {
+  animation: 140ms var(--out) both vt-out;
+}
+
+::view-transition-new(root) {
+  animation: 220ms var(--out) 60ms both vt-in;
+}
+
+@keyframes vt-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+/* Préférence « réduire les animations » : toutes les transitions deviennent immédiates. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0ms !important;
+    transition-delay: 0ms !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,75 @@
+/* Accueil, méthode : un itinéraire en cinq gares, la dernière allumée. */
+
+.route {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.route::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 15px;
+  height: 9px;
+  background: linear-gradient(var(--ink) 3px, var(--lamp) 3px 6px, var(--ink) 6px);
+}
+
+.station {
+  position: relative;
+  padding-top: 52px;
+}
+
+.station::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 22px;
+  height: 22px;
+  background: var(--plate);
+  border: 3px solid var(--ink);
+}
+
+.station--lit::before {
+  background: var(--lamp);
+}
+
+.station h3 {
+  font-size: 1.3125rem;
+  margin-bottom: 8px;
+}
+
+.station p {
+  color: var(--ink-2);
+}
+
+@media (max-width: 1040px) {
+  .route {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .route::before {
+    left: 9px;
+    right: auto;
+    top: 8px;
+    bottom: 8px;
+    width: 9px;
+    height: auto;
+    background: linear-gradient(90deg, var(--ink) 3px, var(--lamp) 3px 6px, var(--ink) 6px);
+  }
+
+  .station {
+    padding: 4px 0 28px 48px;
+  }
+
+  .station::before {
+    top: 4px;
+  }
+}

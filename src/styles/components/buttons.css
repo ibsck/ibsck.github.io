@@ -1,0 +1,54 @@
+/* Boutons et groupe d’actions. */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 10px 18px;
+  background: var(--plate);
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  font-family: var(--head);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 160ms var(--out), color 160ms var(--out);
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--plate);
+}
+
+.btn__meta {
+  font-family: var(--body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+@media (max-width: 480px) {
+  .post .actions .btn,
+  .exit .actions .btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}
+
+.btn--lamp {
+  background: var(--lamp);
+}
+
+.btn--lamp:hover {
+  background: var(--ink);
+  color: var(--lamp);
+}

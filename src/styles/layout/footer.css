@@ -1,0 +1,22 @@
+/* Pied de page. */
+
+.footer {
+  background: var(--panel-solid);
+  padding-block: 40px 48px;
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+}
+
+.footer__inner {
+  display: grid;
+  gap: 14px;
+}
+
+.footer__id {
+  color: var(--ink);
+}
+
+
+.footer__note {
+  max-width: 72ch;
+}

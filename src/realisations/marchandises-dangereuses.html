@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!--@include head-->
+    <meta name="robots" content="index, follow" />
+    <title>Gestion des marchandises dangereuses · Étude de cas · Ibrahima Sory BALDE</title>
+    <meta name="description" content="Étude de cas : application Symfony / React de ségrégation des marchandises dangereuses sur les faisceaux ferroviaires d’HAROPA PORT. Gestion multi-faisceaux configurable, référentiel RID 2025." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Gestion des marchandises dangereuses · Étude de cas" />
+    <meta property="og:description" content="Gestion multi-faisceaux configurable et intégration du RID 2025 en production, sans interruption de service." />
+  </head>
+  <body data-page="v1">
+    <!--@include header-->
+
+    <main id="contenu">
+      <!--@include tracks-strip-->
+
+      <article class="case wrap">
+        <header class="case__head">
+          <div class="case__title">
+            <span class="plate plate--lg" aria-hidden="true">R1</span>
+            <h1>Gestion des marchandises dangereuses sur les faisceaux ferroviaires</h1>
+          </div>
+          <p class="case__lead">Une application qui gère la ségrégation des marchandises dangereuses sur les faisceaux ferroviaires du port et facture les stationnements prolongés. J’y ai travaillé en évolution et en maintenance, sur une application déjà en production.</p>
+          <dl class="facts">
+            <div><dt>Cadre</dt><dd>HAROPA PORT, en tant que salarié</dd></div>
+            <div><dt>Mon rôle</dt><dd>Développeur&nbsp;: évolutions fonctionnelles et maintenance</dd></div>
+            <div><dt>Technologies</dt><dd>PHP, Symfony, React, TypeScript, PostgreSQL, architecture hexagonale</dd></div>
+            <div><dt>Périmètre</dt><dd>Faisceaux du Havre et de Rouen</dd></div>
+          </dl>
+        </header>
+
+        <figure class="schema" aria-labelledby="schema-r1">
+          <div class="schema__panel">
+            <h2 class="schema__heading">Une application, des règles propres à chaque faisceau</h2>
+            <div class="schema__flow">
+              <div class="schema__col">
+                <p class="schema__label">Paramètres par faisceau</p>
+                <div class="schema__nodes">
+                  <div class="node"><span class="node__title">Faisceau A</span> <span class="node__sub">tarifs, droits, facturation</span></div>
+                  <div class="node"><span class="node__title">Faisceau B</span> <span class="node__sub">tarifs, droits, facturation</span></div>
+                  <div class="node"><span class="node__title">Faisceau C</span> <span class="node__sub">tarifs, droits, facturation</span></div>
+                </div>
+              </div>
+              <div class="schema__link" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none"></svg></div>
+              <div class="schema__col">
+                <p class="schema__label">Application</p>
+                <div class="schema__nodes">
+                  <div class="node node--lit"><span class="node__title">Une même application</span> <span class="node__sub">ségrégation, facturation, référentiel RID 2025</span></div>
+                </div>
+              </div>
+              <div class="schema__link" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none"></svg></div>
+              <div class="schema__col">
+                <p class="schema__label">Déploiement</p>
+                <div class="schema__nodes">
+                  <div class="node"><span class="node__title">Le Havre</span> <span class="node__sub">ensemble des faisceaux</span></div>
+                  <div class="node"><span class="node__title">Rouen</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="schema__part">
+              <h3 class="schema__heading">Ma part du projet</h3>
+              <ol class="part">
+                <li class="part__step part__step--done"><span class="line line--solid" aria-hidden="true"></span><span class="part__kind">Réalisé</span> Gestion multi-faisceaux configurable</li>
+                <li class="part__step part__step--contrib"><span class="line line--dashed" aria-hidden="true"></span><span class="part__kind">Contribution</span> Déploiement au Havre et à Rouen</li>
+                <li class="part__step part__step--done"><span class="line line--solid" aria-hidden="true"></span><span class="part__kind">Réalisé</span> Référentiel RID 2025 en production, sans interruption</li>
+                <li class="part__step part__step--done"><span class="line line--solid" aria-hidden="true"></span><span class="part__kind">Réalisé</span> Maintenance corrective et évolutive</li>
+              </ol>
+            </div>
+          </div>
+          <figcaption id="schema-r1"><strong>Schéma illustratif.</strong> Il résume le principe d’une configuration par faisceau&nbsp;; les noms A, B et C sont fictifs. Ce n’est pas une capture de l’application.</figcaption>
+        </figure>
+
+        <div class="case__grid">
+          <div class="case__text">
+            <section aria-labelledby="c1">
+              <h2 id="c1">Le contexte</h2>
+              <p>Sur un port, les wagons chargés de marchandises dangereuses stationnent sur des faisceaux ferroviaires, c’est-à-dire des ensembles de voies parallèles. Certaines marchandises ne doivent pas se retrouver à proximité les unes des autres&nbsp;: c’est la ségrégation. L’application gère ces règles et facture les stationnements qui se prolongent.</p>
+            </section>
+
+            <section aria-labelledby="c2">
+              <h2 id="c2">Le besoin</h2>
+              <p>Chaque faisceau a ses propres conditions&nbsp;: ses tarifs, ses droits et ses règles de facturation. Pour que l’outil serve sur plusieurs faisceaux, ces différences devaient pouvoir se paramétrer faisceau par faisceau.</p>
+              <p>La réglementation évolue elle aussi&nbsp;: l’édition 2025 du référentiel RID devait être intégrée alors que l’application était en service.</p>
+            </section>
+
+            <section aria-labelledby="c3">
+              <h2 id="c3">Ce que j’ai fait</h2>
+              <ul class="steps">
+                <li>J’ai intégré la <strong>gestion multi-faisceaux configurable</strong>&nbsp;: chaque faisceau porte ses tarifs, ses droits et ses règles de facturation.</li>
+                <li>Cette évolution a contribué au <strong>déploiement de l’outil sur l’ensemble des faisceaux du Havre et à Rouen</strong>.</li>
+                <li>J’ai intégré le <strong>référentiel réglementaire RID 2025 en production, sans interruption de service</strong>.</li>
+                <li>J’ai assuré la maintenance corrective et évolutive de l’application.</li>
+              </ul>
+              <p class="muted">Les données de l’application restent internes à HAROPA PORT&nbsp;; je n’en publie ni capture ni chiffre.</p>
+            </section>
+
+            <section aria-labelledby="c5">
+              <h2 id="c5">Ce que ce projet montre</h2>
+              <p>Comprendre des règles métier et réglementaires, les traduire dans le code avec des droits et une facturation qui varient selon le contexte, et faire évoluer une application en production sans perturber ceux qui l’utilisent.</p>
+            </section>
+          </div>
+
+          <aside class="case__side" aria-label="Lexique">
+
+            <section class="lexicon" aria-labelledby="lex">
+              <h2 id="lex">Termes utiles</h2>
+              <dl>
+                <dt>Faisceau ferroviaire</dt><dd>Ensemble de voies parallèles où les wagons sont garés ou triés.</dd>
+                <dt>Ségrégation</dt><dd>Règles qui imposent de tenir éloignées des marchandises dangereuses incompatibles entre elles.</dd>
+                <dt>RID</dt><dd>Règlement international du transport ferroviaire des marchandises dangereuses, révisé régulièrement.</dd>
+                <dt>Architecture hexagonale</dt><dd>Organisation du code qui isole les règles métier des détails techniques (base de données, interface), pour les faire évoluer et les tester séparément.</dd>
+                <dt>Maintenance corrective et évolutive</dt><dd>Corriger les anomalies d’une application en service, et y ajouter ou adapter des fonctionnalités.</dd>
+              </dl>
+            </section>
+          </aside>
+        </div>
+
+        <nav class="case__nav" aria-label="Études de cas voisines">
+          <a class="case__next" href="/realisations/documentation-utilisateur.html" rel="next"><span class="plate">R2</span> <span class="link-label">Réalisation suivante&nbsp;: plateforme de documentation utilisateur</span></a>
+        </nav>
+      </article>
+
+      <!--@include contact-->
+    </main>
+
+    <!--@include footer-->
+  </body>
+</html>

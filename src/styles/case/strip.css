@@ -1,0 +1,89 @@
+/* Études de cas : bande de position entre les quatre réalisations. */
+
+.strip {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding-block: 20px 0;
+}
+
+.strip__home {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--head);
+  font-weight: 600;
+}
+
+.strip__list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.strip__list a {
+  position: relative;
+  display: grid;
+  justify-items: start;
+  gap: 6px;
+  padding: 0 8px 8px 0;
+  text-decoration: none;
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+}
+
+.strip__list a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 14px;
+  height: 3px;
+  background: var(--ink);
+}
+
+.strip__list .plate {
+  position: relative;
+}
+
+.strip__list a[aria-current='page'] {
+  color: var(--ink);
+}
+
+.strip__list a[aria-current='page']::before {
+  top: 11px;
+  height: 9px;
+  background: linear-gradient(var(--ink) 3px, var(--lamp) 3px 6px, var(--ink) 6px);
+}
+
+.strip__list a[aria-current='page'] .plate,
+.strip__list a:hover .plate {
+  background: var(--lamp);
+}
+
+.strip__label {
+  line-height: 1.2;
+}
+
+@media (max-width: 720px) {
+  .strip {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .strip__list a:not([aria-current='page']) .strip__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}

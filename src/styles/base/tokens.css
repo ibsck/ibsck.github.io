@@ -1,0 +1,22 @@
+/* Jetons : couleurs, grille de 32 px, familles de polices, courbe d’animation. */
+
+:root {
+  --panel: #d4dad0;
+  --panel-solid: #d9ded5;
+  --joint: #c8cfc3;
+  --ink: #141b18;
+  --ink-2: #39443f;
+  --plate: #fbfbf8;
+  --lamp: #f2b300;
+  --lamp-deep: #94680a;
+  --stop: #b3261e;
+  --on-ink-2: #dfe4dc;
+
+  --tile: 32px;
+  --head: 'Barlow Semi Condensed', 'Barlow', system-ui, sans-serif;
+  --body: 'Barlow', system-ui, sans-serif;
+
+  --out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  color-scheme: light;
+}

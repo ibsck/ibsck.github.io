@@ -1,0 +1,18 @@
+{
+  "name": "portfolio-ibrahima-sory-balde",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Portfolio d’Ibrahima Sory BALDE, développeur PHP/Symfony et React/TypeScript.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}
