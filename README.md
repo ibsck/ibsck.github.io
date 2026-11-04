@@ -84,9 +84,9 @@ En cas de changement d'adresse (nom de domaine personnel, par exemple), remplace
 
 ### Remplacer le CV
 
-Remplacer `public/cv/CV_Ibrahima_Sory_BALDE.pdf` en gardant le même nom. Si son poids change nettement, mettre à jour la mention « PDF, 53 Ko » dans `src/index.html` et `src/partials/contact.html`.
+Remplacer `public/cv/CV_Ibrahima_Sory_BALDE.pdf` en gardant le même nom. Si son poids change nettement, mettre à jour la mention « PDF, 61 Ko » dans `src/index.html` et `src/partials/contact.html`.
 
-Le CV actuel contient le numéro de téléphone et indique la recherche d'un CDI : il sera public une fois le site en ligne.
+Le CV en ligne contient le numéro de téléphone et indique une disponibilité en freelance : il est public.
 
 ### Contact
 
